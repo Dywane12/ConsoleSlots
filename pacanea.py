@@ -14,7 +14,7 @@ def pacanea():
     while stop == True:
         try:
             printMenu()
-            option = int(input("💸 Alege coaie, 1 sau 2: "))
+            option = int(input("💸 Alege boss, 1 sau 2: "))
             if option == 1:
                 lst = ['👺','🐉','🐧️','💥','💲']
                 result1 = []
@@ -31,22 +31,22 @@ def pacanea():
                 print(result2)
                 print(result3)
                 if result1 == ['🐉','🐉','🐉','🐉','🐉'] or result2 == ['🐉','🐉','🐉','🐉','🐉'] or result3 == ['🐉','🐉','🐉','🐉','🐉']:
-                    print("🐉 BINE COAIEEE!! Dragonasu' meu preferat 🐉")
+                    print("🐉 BINE BOSSSS!! Dragonasu' meu preferat 🐉")
                 elif result1 == ['👺','👺','👺','👺','👺'] or result2 == ['👺','👺','👺','👺','👺'] or result3 == ['👺','👺','👺','👺','👺']:
-                    print("👺 BINE COAIEEE!! Mascatu' mascatilor 👺")
+                    print("👺 BINE BOSSSS!! Mascatu' mascatilor 👺")
                 elif result1 == ['🐧️','🐧️','🐧️','🐧️','🐧️'] or result2 == ['🐧️','🐧️','🐧️','🐧️','🐧️'] or result3 == ['🐧️','🐧️','🐧️','🐧️','🐧️']:
                     print("🐧 BINE COAIEEE!! Si cu pinguinii in Antarctica castigi 🐧")
                 elif result1 == ['💥','💥','💥','💥','💥'] or result2 == ['💥','💥','💥','💥','💥'] or result3 == ['💥','💥','💥','💥','💥']:
-                    print("💥 BINE COAIEEE!! Bombardezi tot pe aici 💥")
+                    print("💥 BINE BOSSSS!! Bombardezi tot pe aici 💥")
                 elif result1 == ['💲','💲','💲','💲','💲'] or result2 == ['💲','💲','💲','💲','💲'] or result3 == ['💲','💲','💲','💲','💲']:
-                    print("😎 BINE COAIEEE!! De banii asta iti iei yacht ce sa mai 😎")
+                    print("😎 BINE BOSSSS!! De banii asta iti iei yacht ce sa mai 😎")
                 else:
-                    print("😣 Mai incearca coae. Urmatoarea intra promit 😣")
+                    print("😣 Mai incearca bos. Urmatoarea intra promit 😣")
             elif option == 2:
                 print("Responsabilule, ne mai vedem noi 😏")
                 stop = False
             else:
-                print("1 SAU 2 COAIE, ESTI PROST? 🤥")
+                print("1 SAU 2 BAAA, ESTI PROST? 🤥")
         except ValueError:
             print("Esti prost rau smr... 😪")
 
