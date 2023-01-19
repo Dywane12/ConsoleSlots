@@ -47,21 +47,23 @@ def pacanea():
                 print(result3)
                 if result1 == ['🐉','🐉','🐉','🐉','🐉'] or result2 == ['🐉','🐉','🐉','🐉','🐉'] or result3 == ['🐉','🐉','🐉','🐉','🐉']:
                     print("🐉 BINE BOSSSS!! Dragonasu' meu preferat 🐉")
-                    total = bani.getTotal() * 7
+                    total += bani.getBet() * 7
                     bani.setTotal(total)
                 elif result1 == ['👺','👺','👺','👺','👺'] or result2 == ['👺','👺','👺','👺','👺'] or result3 == ['👺','👺','👺','👺','👺']:
                     print("👺 BINE BOSSSS!! Mascatu' mascatilor 👺")
-                    total = bani.getTotal() * 5
+                    total += bani.getBet() * 5
                     bani.setTotal(total)
                 elif result1 == ['🐧️','🐧️','🐧️','🐧️','🐧️'] or result2 == ['🐧️','🐧️','🐧️','🐧️','🐧️'] or result3 == ['🐧️','🐧️','🐧️','🐧️','🐧️']:
-                    print("🐧 BINE COAIEEE!! Si cu pinguinii in Antarctica castigi 🐧")
+                    print("🐧 BINE BOSSSS!! Si cu pinguinii in Antarctica castigi 🐧")
+                    total += bani.getBet() * 10
+                    bani.setTotal(total)
                 elif result1 == ['💥','💥','💥','💥','💥'] or result2 == ['💥','💥','💥','💥','💥'] or result3 == ['💥','💥','💥','💥','💥']:
                     print("💥 BINE BOSSSS!! Bombardezi tot pe aici 💥")
-                    total = bani.getTotal() * 3
+                    total += bani.getBet() * 3
                     bani.setTotal(total)
                 elif result1 == ['💲','💲','💲','💲','💲'] or result2 == ['💲','💲','💲','💲','💲'] or result3 == ['💲','💲','💲','💲','💲']:
                     print("😎 BINE BOSSSS!! De banii asta iti iei yacht ce sa mai 😎")
-                    total = bani.getTotal() * 10
+                    total += bani.getBet() * 20
                     bani.setTotal(total)
                 else:
                     print("😣 Mai incearca bos. Urmatoarea intra promit 😣")
