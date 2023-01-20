@@ -1,5 +1,6 @@
 import random
 from bani import Bani
+import helper
 
 def printMenu():
     msg = "\t 💲💲💲💲💲💲💲💲 \n"
@@ -12,10 +13,31 @@ def printMenu():
     msg += "\t 5 - Iesi din joc? Bine ca esti responsabil 🙄 \n"
     msg += "\t 💲💲💲💲💲💲💲💲 \n"
     print(msg)
+    print()
 
 def citesteBani():
-    total = int(input("Cati bani total baiatu?\n"))
-    bet = int(input("Cati bani pariezi baiatu?\n"))
+    total = None
+    bet = None
+    while total == None or total <= 0:
+        try:
+            total = int(input("Cati bani total baiatu?\n"))
+            if total == 0:
+                raise ValueError("ba cum bagi 0 bani???? cum e posibil sa nu bagi bani cand te intreb cat bagi???")
+            if total < 0:
+                raise ValueError("ba cum ba sa bagi bani cu minus???? esti prost????")
+        except ValueError as ve:
+            print(ve)
+    while bet == None or bet <= 0 or bet > total:
+        try:
+            bet = int(input("Cati bani pariezi baiatu?\n"))
+            if bet == 0:
+                raise ValueError("ba cum sa pariezi 0 bani??? stii cum functioneaza o pacanea?????")
+            if bet < 0:
+                raise ValueError("ba cum ba sa pariezi bani cu minus???? esti prost sau te prefaci????")
+            if bet > total:
+                raise ValueError("ba tu nu gandesti??? nu poti paria mai mult decat ai!")
+        except ValueError as ve:
+            print(ve)
     try:
         return Bani(total,bet)
     except ValueError as ve:
@@ -47,10 +69,12 @@ def pacanea():
                 print(result3)
                 if result1 == ['🐉','🐉','🐉','🐉','🐉'] or result2 == ['🐉','🐉','🐉','🐉','🐉'] or result3 == ['🐉','🐉','🐉','🐉','🐉']:
                     print("🐉 BINE BOSSSS!! Dragonasu' meu preferat 🐉")
+                    print()
                     total += bani.getBet() * 7
                     bani.setTotal(total)
                 elif result1 == ['👺','👺','👺','👺','👺'] or result2 == ['👺','👺','👺','👺','👺'] or result3 == ['👺','👺','👺','👺','👺']:
                     print("👺 BINE BOSSSS!! Mascatu' mascatilor 👺")
+                    print()
                     total += bani.getBet() * 5
                     bani.setTotal(total)
                 elif result1 == ['🐧️','🐧️','🐧️','🐧️','🐧️'] or result2 == ['🐧️','🐧️','🐧️','🐧️','🐧️'] or result3 == ['🐧️','🐧️','🐧️','🐧️','🐧️']:
@@ -59,18 +83,33 @@ def pacanea():
                     bani.setTotal(total)
                 elif result1 == ['💥','💥','💥','💥','💥'] or result2 == ['💥','💥','💥','💥','💥'] or result3 == ['💥','💥','💥','💥','💥']:
                     print("💥 BINE BOSSSS!! Bombardezi tot pe aici 💥")
+                    print()
                     total += bani.getBet() * 3
                     bani.setTotal(total)
                 elif result1 == ['💲','💲','💲','💲','💲'] or result2 == ['💲','💲','💲','💲','💲'] or result3 == ['💲','💲','💲','💲','💲']:
                     print("😎 BINE BOSSSS!! De banii asta iti iei yacht ce sa mai 😎")
+                    print()
                     total += bani.getBet() * 20
                     bani.setTotal(total)
                 else:
                     print("😣 Mai incearca bos. Urmatoarea intra promit 😣")
-                    total = bani.getTotal() - bani.getBet()
-                    bani.setTotal(total)
-                print("Bani ramasi: \n")
-                print(bani)
+                    print()
+                    if bani.getTotal() < 0:
+                        pass
+                    else:
+                        total = bani.getTotal() - bani.getBet()
+                        bani.setTotal(total)
+                if bani.getTotal() < 0:
+                    print("Imi pare rau boss da' nu mai ai bani! Ne mai auzim noi, te astept oricand!")
+                    print()
+                    stop = False
+                if bani.getTotal() == 0:
+                    print("Vad ca ai ramas pe 0, hai ca iti dau un spin ca is de treaba")
+                    print()
+                if bani.getTotal() > 0:
+                    print("Bani ramasi: \n")
+                    print(bani)
+                    print()
             elif option == 2:
                 print("Ia aici cati bani ai boss: ")
                 print(bani)

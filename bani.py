@@ -8,7 +8,7 @@ class Bani:
         if helper.isInt(bet):
             self.__bet = bet
         else:
-            raise ValueError("baiatu numere te rog!")
+            raise ValueError("baiatu tre sa pui numere!")
 
     # Getters
     def getTotal(self):
@@ -21,14 +21,10 @@ class Bani:
     def setTotal(self, newTotal):
         if helper.isInt(newTotal):
             self.__total = newTotal
-        else:
-            raise ValueError("baiatu tre sa pui numere!")
 
     def setBet(self, newBet):
         if helper.isInt(newBet):
             self.__bet = newBet
-        else:
-            raise ValueError("baiatu numere te rog!")
 
     def __repr__(self):
         return "\tTotal: " + str(self.__total) + "\n \tCurrent bet: " + str(self.__bet)
