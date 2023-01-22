@@ -67,31 +67,9 @@ def pacanea():
                 print(result1)
                 print(result2)
                 print(result3)
-                if result1 == ['🐉','🐉','🐉','🐉','🐉'] or result2 == ['🐉','🐉','🐉','🐉','🐉'] or result3 == ['🐉','🐉','🐉','🐉','🐉']:
-                    print("🐉 BINE BOSSSS!! Dragonasu' meu preferat 🐉")
-                    print()
-                    total += bani.getBet() * 7
-                    bani.setTotal(total)
-                elif result1 == ['👺','👺','👺','👺','👺'] or result2 == ['👺','👺','👺','👺','👺'] or result3 == ['👺','👺','👺','👺','👺']:
-                    print("👺 BINE BOSSSS!! Mascatu' mascatilor 👺")
-                    print()
-                    total += bani.getBet() * 5
-                    bani.setTotal(total)
-                elif result1 == ['🐧️','🐧️','🐧️','🐧️','🐧️'] or result2 == ['🐧️','🐧️','🐧️','🐧️','🐧️'] or result3 == ['🐧️','🐧️','🐧️','🐧️','🐧️']:
-                    print("🐧 BINE BOSSSS!! Si cu pinguinii in Antarctica castigi 🐧")
-                    total += bani.getBet() * 10
-                    bani.setTotal(total)
-                elif result1 == ['💥','💥','💥','💥','💥'] or result2 == ['💥','💥','💥','💥','💥'] or result3 == ['💥','💥','💥','💥','💥']:
-                    print("💥 BINE BOSSSS!! Bombardezi tot pe aici 💥")
-                    print()
-                    total += bani.getBet() * 3
-                    bani.setTotal(total)
-                elif result1 == ['💲','💲','💲','💲','💲'] or result2 == ['💲','💲','💲','💲','💲'] or result3 == ['💲','💲','💲','💲','💲']:
-                    print("😎 BINE BOSSSS!! De banii asta iti iei yacht ce sa mai 😎")
-                    print()
-                    total += bani.getBet() * 20
-                    bani.setTotal(total)
-                else:
+                total = bani.getTotal()
+                helper.allWins(result1,result2,result3, bani, total)
+                if bani.getTotal() == total:
                     print("😣 Mai incearca bos. Urmatoarea intra promit 😣")
                     print()
                     if bani.getTotal() < 0:
